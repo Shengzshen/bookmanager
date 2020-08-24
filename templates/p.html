@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index_主页</title>
+</head>
+<body>
+<h3>hello  1</h3>
+{#{{ all_pulishers }}#}
+<table>
+    <thead>
+        <tr>
+                <th>序号</th>
+                <th>id</th>
+                <th>出版社</th>
+                <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in all_pulishers %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.id }}</td>
+                <td>{{ i.name }}</td>
+                <td>
+                <a href="/publisher_del/?id={{ i.id }}" >删除</a>
+                </td>
+            </tr>
+
+        {% endfor %}
+
+    </tbody>
+</table>
+</body>
+</html>

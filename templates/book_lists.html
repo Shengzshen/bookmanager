@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index_主页</title>
+</head>
+<body>
+<h3>hello  book_list</h3>
+{#{{ all_pulishers }}#}
+<table>
+    <thead>
+        <tr>
+                <th>序号</th>
+                <th>id</th>
+                <th>书名</th>
+                <th>出版社</th>
+                <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in all_books %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ book.id }}</td>
+                <td>{{ book.name }}</td>
+                <td>{{ book.publisher_id.name }}</td>
+                <td>
+                <a href="/book_del/?id={{ book.id }}" >删除</a>
+                <a href="/book_edit/?id={{ book.id }}" >编辑</a>
+                </td>
+            </tr>
+
+        {% endfor %}
+
+    </tbody>
+</table>
+</body>
+</html>

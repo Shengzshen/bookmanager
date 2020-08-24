@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add</title>
+</head>
+<body>
+<h3>hello  1</h3>
+{#{{ all_pulishers }}#}
+<div>
+    <form action="" method="post">
+   <p>
+       书名: <input type="text" name="book_name"/><span>{{ error }}</span>
+   </p>
+  <p>
+     出版社：
+    <select name="pub_id" id="">
+        {% for publisher in all_pulishers %}
+            <option value="{{ publisher.pk }}">{{ publisher.name }}</option>
+        {% endfor %}
+    </select>
+    </p>
+    <p>
+    <button>提交</button><span>{{ success }}</span>
+    </p>
+</form>
+</div>
+
+
+</body>
+</html>
